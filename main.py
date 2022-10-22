@@ -1,7 +1,12 @@
 from tkinter import *
+from PIL import ImageTk, Image
 window = Tk()
 
 titleLabel = Label(window,text="Welcome to Humsafar Bank",font=("Lucida",30)).grid(row=0,column=0,columnspan=2)
+
+image_0 = Image.open('C:\Users\mishr\Dropbox\PC\Desktop')
+bck.end = ImageTk.PhotoImage(image_0)
+window.geometry('800*600')
 
 firstNamelabel = Label(window,text = "Enter your bank account number: ").grid(row=1,column=0)
 firstNameEntry = Entry(window).grid(row=1,column=1)
