@@ -1,6 +1,26 @@
 from tkinter import *
 from PIL import ImageTk, Image
+import pymysql
+
+
+con = pymysql.connector.connect(host='localhost', user='root', password='humtum', database='hello')
+cur = con.cursor(buffered=True)
+
+try:
+   cur.execute("SignUp")
+except:
+    cur.execute("create database registration")
+    cur.execute("use SignUp")
+
+try:
+    cur.execute("describe persons")
+except:
+    cur.execute("create table bank(id int primary key auto_increment, name varchar(50), age int, gender varchar(5), email varchar(50), mobile varchar(11))")
+def SignUp:
+    cur.execute(f"insert into bank(name, age, gender, email, mobile) values ('{e1.get()},'{e2.get()}',{e3.get()}',{e4.get()},'{e5.get()}')")
+
 window = Tk()
+
 window.title("test bank")
 
 image_test = Image.open('download.jpg')
