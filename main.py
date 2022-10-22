@@ -4,7 +4,7 @@ window = Tk()
 
 titleLabel = Label(window,text="Welcome to Humsafar Bank",font=("Lucida",30)).grid(row=0,column=0,columnspan=2)
 
-image_0 = Image.open('C:\Users\mishr\Dropbox\PC\Desktop')
+image_0 = Image.open('download.jpg')
 bck.end = ImageTk.PhotoImage(image_0)
 window.geometry('800*600')
 
