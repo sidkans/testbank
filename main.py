@@ -16,8 +16,8 @@ try:
     cur.execute("describe persons")
 except:
     cur.execute("create table bank(id int primary key auto_increment, name varchar(50), age int, gender varchar(5), email varchar(50), mobile varchar(11))")
-def SignUp:
-    cur.execute(f"insert into bank(name, age, gender, email, mobile) values ('{e1.get()},'{e2.get()}',{e3.get()}',{e4.get()},'{e5.get()}')")
+    def SignUp():
+        cur.execute(f"insert into bank(name, age, gender, email, mobile) values ('{e1.get()},'{e2.get()}',{e3.get()}',{e4.get()},'{e5.get()}')")
 
 window = Tk()
 

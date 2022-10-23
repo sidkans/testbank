@@ -1,7 +1,4 @@
-pass_log = []
-def signup(email,name,username,password):
-    if username in pass_log:
-        print("username is already taken")
-    elif:
-
-
+slt = []
+slt.append([1, 2, 3])
+slt.append([1,2,3,4])
+print(slt)
