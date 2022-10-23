@@ -1,16 +1,27 @@
 from tkinter import *
+from PIL import ImageTk, Image
+
 window = Tk()
 
-titleLabel = Label(window,text="Welcome to Humsafar Bank",font=("Lucida",30)).grid(row=0,column=0,columnspan=2)
+window.title("test bank")
 
-firstNamelabel = Label(window,text = "Enter your bank account number: ").grid(row=1,column=0)
-firstNameEntry = Entry(window).grid(row=1,column=1)
+image_test = Image.open('download.jpg')
+image_0 = image_test.resize((800, 600))
+bck_end = ImageTk.PhotoImage(image_0)
+window.geometry('800x600')
+bgimg = Label(window, image=bck_end)
+bgimg.place(x=0, y=0)
 
-passwordlabel = Label(window,text = "Enter your password: ").grid(row=2,column=0)
-passwordEntry = Entry(window).grid(row=2,column=1)
+titleLabel = Label(window, text="Welcome to test Bank", font=("Lucida", 28)).pack(pady=5)
 
-SignUpButton = Button(window,text="ForgotPassword",font=("Edwardian",18)).grid(row=4,column=0,columnspan=2)
 
-LoginButton = Button(window,text="Login").grid(row=3,column=0,columnspan=2)
+firstNamelabel = Label(window, text="Enter your bank account number: ").pack(pady=1)
+firstNameEntry = Entry(window).pack(pady=5)
+
+passwordlabel = Label(window, text="Enter your password: ").pack(pady=1)
+passwordEntry = Entry(window).pack(pady=5)
+
+LoginButton = Button(window, text="Login").pack(pady=5)
+forgotpassButton = Button(window, text="ForgotPassword").pack(pady=5)
 
 window.mainloop()
