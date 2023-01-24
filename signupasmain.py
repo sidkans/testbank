@@ -64,34 +64,75 @@ e6.grid(row=6, column=2,padx=10, pady=5, sticky="nsew")
 e7.grid(row=7, column=2,padx=10, pady=5, sticky="nsew")
 
 
+def NewWindow():
+    # Toplevel object which will
+    # be treated as a new window
+    newWindow = tkinter.Toplevel(win)
+
+    # sets the title of the
+    # Toplevel widget
+    newWindow.title("New Window")
+
+    # sets the geometry of toplevel
+    newWindow.geometry("200x200")
+
+    # A Label widget to show in toplevel
+    Label(newWindow,
+          text="This is a new window").pack(pady=5)
+    def closebtn():
+        newWindow.destroy()
+
+    c = tkinter.Button(newWindow, text="test bank", command=lambda : [openNewWindow(), closebtn()]).pack(pady=5)
+    f = tkinter.Button(newWindow, text="signup", command=closebtn).pack(pady=5)
 
 
 
 
+def openNewWindow():
+
+    window = tkinter.Toplevel(win)
 
 
+    window.title("test bank")
 
+    image_test = Image.open('backgroundimg.jpg')
+    image_0 = image_test.resize((800, 600))
+    global bck_end
+    bck_end = ImageTk.PhotoImage(image_0)
+    window.geometry('400x300')
+    bgimg = Label(window, image=bck_end)
+    bgimg.place(x=0, y=0)
 
+    titleLabel = Label(window, text="Welcome to test Bank", font=("Lucida", 28)).pack(pady=5)
 
+    firstNamelabel = Label(window, text="Enter your bank account number: ").pack(pady=1)
+    firstNameEntry = Entry(window).pack(pady=5)
 
+    passwordlabel = Label(window, text="Enter your password: ").pack(pady=1)
+    passwordEntry = Entry(window).pack(pady=5)
 
+    LoginButton = Button(window, text="Login").pack(pady=5)
+    forgotpassButton = Button(window, text="ForgotPassword").pack(pady=5)
 
+    def closebtn(): #close button to destroy current toplevel window
+        window.destroy()
 
+    d = tkinter.Button(window, text="click me", command=lambda : [NewWindow(), closebtn()]).pack(pady=5) #opens new toplevel window; destroys current window
 
-
-
-
-
-
-
-
-
-
+    d = tkinter.Button(window, text="signup", command=closebtn).pack(pady=5)
 
 
 
 b = tkinter.Button(win, text="submit", command=register)
-b.grid(row=8, column=1,padx=100, pady=5, sticky="nsew")
+b.grid(row=8, column=1,padx=50, pady=5, sticky="nsew")
+
+c = tkinter.Button(win, text="back to login page", command=openNewWindow)
+c.grid(row=8, column=2, padx=50, pady=5, sticky="nsew")
+
+d = tkinter.Button(win, text="click me", command=NewWindow)
+d.grid(row=9, column=1, padx=50, pady=5, sticky="ns")
+
+
 
 
 

@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 import pymysql
 
 
-con = pymysql.connector.connect(host='localhost',user='root',passwd='fashbooster2004!',database='bntr')
+con = pymysql.connect(host='localhost',user='root',passwd='tomriddle@31',database='bntr')
 cur = con.cursor(buffered=True)
 
 try:
